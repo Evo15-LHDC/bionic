@@ -1851,9 +1851,9 @@ cc_defaults {
     name: "libstdc++_defaults",
     static_ndk_lib: true,
     static_libs: ["libasync_safe"],
-    apex_available: [
-        "//apex_available:platform",
-    ],
+    //apex_available: [
+    //    "//apex_available:platform",
+    //],
 
     static: {
         system_shared_libs: [],
@@ -1883,6 +1883,11 @@ cc_defaults {
             version_script: ":libstdc++.x86_64.map",
         },
     },
+    apex_available: [
+        "//apex_available:platform",
+        "com.android.bt",
+    ],
+    min_sdk_version: "33",
 }
 
 cc_library {
